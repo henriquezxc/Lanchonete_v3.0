@@ -1,3 +1,3 @@
 # Lanchonete_v3.0
 
-# Versão 3.0 do software  de uma lanchone que estou usando apenas para aplicar minhas aulas em pytho e conhecimento que estou adquirindo com o passar dos tempos.
+# "Estou usando a versão 3.0 de um software de uma lanchonete apenas para aplicar minhas aulas em Python e o conhecimento que estou adquirindo com o passar do tempo."
