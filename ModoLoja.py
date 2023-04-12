@@ -21,3 +21,6 @@ def Selecao_Dois():
 
 def Selecao_Tres():
     pass
+
+def Selecao_Quatro():
+    pass
