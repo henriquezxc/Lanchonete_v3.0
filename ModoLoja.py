@@ -8,21 +8,20 @@ VOCÊ ESTÁ NO MODO LOJA, AQUI ESTARÁ TODOS OS DADOS DE SUA EMPRESA
 print('''
 1 - LISTAR TODOS OS PRODUTOS VENDIDOS NA ORDEM DE COMPRA 
 2 - MOSTRAR QUANTIDADE DE CADA PRODUTO VENDIDO
-3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS
-0 - LIMPAR TODA A LISTA DE PRODUTOS DA LISTA
+3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS #Em Desenvolvimento...
+0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
 ''')
 # Usuario seleciona a opção desejada conforme pede acima. 
 Entrada_Usuario = str(input('DIGITE UMA OPÇÃO: '))
 
 # Ao selecionar a opção 1 o codigo a seguir e executado.
 def Selecao_Um():
-    from ConversorTXT import Lista_Temp
-    for i in Lista_Temp:
+    with open('Dados.txt') as arquivo:
+        i = arquivo.read()
         print(i)
 # Ao usuario digitar a string '1' irá acionar o def Selecao_Um(): criado acima.
 if Entrada_Usuario == '1':
     Selecao_Um()
-
 
 # Ao selecionar a opção 2 o codigo a seguir e executado.
 def Selecao_Dois():
@@ -43,9 +42,23 @@ def Selecao_Tres():
     pass
 
 
-
-
 def Selecao_Quatro():
     pass
 
 
+# Ao selecionar a opção 0 o codigo a seguir e executado.
+def Selecao_Zero():
+    print('''
+    VOCÊ ESTÁ PRESTES A EXCLUIR TODA BASE SE DADOS !!!
+    DIGITE ( S I M ) - PARA EXCLUIR TUDO.
+    DIGITE ( N Ã O ) - PARA CANCELAR ESSA OPERAÇÃO.
+    ''')
+    Entrada_Usuario_Zero = (input('DIGITE AQUI SUA DECISÃO: ').upper())
+    if Entrada_Usuario_Zero == 'SIM':
+        with open('Dados.txt','w') as arquivo:
+            arquivo.write("")
+        print('TODA A LISTA FOI APAGADA.')
+
+# Ao usuario digitar a string '0' irá acionar o def Selecao_Zero(): criado acima.
+if Entrada_Usuario == '0':
+    Selecao_Zero()
