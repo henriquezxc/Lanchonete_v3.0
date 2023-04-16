@@ -1,5 +1,5 @@
 # Aqui esta todo o algoritmo do modo loja, onde fica armazenado todos os dados de compra
-
+from Cores import *
 print('''
 #################################################################
 VOCÊ ESTÁ NO MODO LOJA, AQUI ESTARÁ TODOS OS DADOS DE SUA EMPRESA 
@@ -55,9 +55,21 @@ def Selecao_Zero():
     ''')
     Entrada_Usuario_Zero = (input('DIGITE AQUI SUA DECISÃO: ').upper())
     if Entrada_Usuario_Zero == 'SIM':
-        with open('Dados.txt','w') as arquivo:
-            arquivo.write("")
-        print('TODA A LISTA FOI APAGADA.')
+        print(f'''
+    {verde2}PARA APAGAR VOCÊ PRECISA DIGITAR A SEGUINTE SENHA:{defalt} {vermelho2}12345{defalt}
+        ''')
+        while True:
+            Imput_Temporario = str(input('DIGITE A SENHA PARA CONFIRMAR: '))
+            if Imput_Temporario == '12345':
+                with open('Dados.txt','w') as arquivo:
+                    arquivo.write("")
+                print(f'{verde2}TODA A LISTA FOI APAGADA COM SUCESSO.{defalt}')
+                break
+            else:
+                print(f'{vermelho2}SENHA INVALIDA! TENTE NOVAMENTE.{defalt}')
+
+    if Entrada_Usuario_Zero == 'NAO':
+        print(f'{vermelho2}COMANDO CANCELADO{defalt}')
 
 # Ao usuario digitar a string '0' irá acionar o def Selecao_Zero(): criado acima.
 if Entrada_Usuario == '0':
