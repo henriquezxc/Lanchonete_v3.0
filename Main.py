@@ -120,7 +120,6 @@ def Menu_main2():
         import Main
 
     elif Entrada_Final == '2':
-        print('EM DESENVOLVIMENTO ...')
         import ModoLoja
          
     elif Entrada_Final == '3':

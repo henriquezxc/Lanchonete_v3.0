@@ -1,16 +1,16 @@
 # Aqui esta todo o algoritmo do modo loja, onde fica armazenado todos os dados de compra
 from Cores import *
-print('''
+print(f'''
 #################################################################
-VOCÊ ESTÁ NO MODO LOJA, AQUI ESTARÁ TODOS OS DADOS DE SUA EMPRESA 
+{amarelo}VOCÊ ESTÁ NO MODO LOJA, AQUI ESTARÁ TODOS OS DADOS DE SUA EMPRESA{defalt} 
 #################################################################
 ''')
-print('''
+print(f'''{verde2}
 1 - LISTAR TODOS OS PRODUTOS VENDIDOS NA ORDEM DE COMPRA 
 2 - MOSTRAR QUANTIDADE DE CADA PRODUTO VENDIDO
 3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS #Em Desenvolvimento...
 0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
-''')
+{defalt}''')
 # Usuario seleciona a opção desejada conforme pede acima. 
 Entrada_Usuario = str(input('DIGITE UMA OPÇÃO: '))
 
