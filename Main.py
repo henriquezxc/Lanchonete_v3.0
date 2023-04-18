@@ -58,7 +58,7 @@ while True:
         nomes_lanches.append('Cachorro Quente R$: 4.89')
         # Imprimimos uma mensagem para saber qual lanche foi selecionado e adicionado a lista: lanches_escolhidos = []
         print('Cachorro Quente foi adicionado.')
-    # Os demais contunua da mesma forma mensionada acima.
+    # Os demais continua da mesma forma mensionada acima.
         Mensagem_SAIR()
     elif Escolha_do_lanche == '2':
         lanches_escolhidos.append(Valores[1])
@@ -117,7 +117,8 @@ def Menu_main2():
 
     Entrada_Final = str(input('DIGITE A OPÇÃO DESEJADA: '))
     if Entrada_Final == '1':
-        import Main
+        while True:
+            import Main
 
     elif Entrada_Final == '2':
         import ModoLoja

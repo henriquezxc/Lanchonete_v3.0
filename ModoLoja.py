@@ -13,7 +13,6 @@ print(f'''{verde2}
 {defalt}''')
 # Usuario seleciona a opção desejada conforme pede acima. 
 Entrada_Usuario = str(input('DIGITE UMA OPÇÃO: '))
-
 # Ao selecionar a opção 1 o codigo a seguir e executado.
 def Selecao_Um():
     with open('Dados.txt') as arquivo:
@@ -36,7 +35,6 @@ def Selecao_Dois():
 if Entrada_Usuario == '2':
     Selecao_Dois()
 
-
 # Ao selecionar a opção 3 o codigo a seguir e executado.
 def Selecao_Tres():
     pass
@@ -48,6 +46,8 @@ def Selecao_Quatro():
 
 # Ao selecionar a opção 0 o codigo a seguir e executado.
 def Selecao_Zero():
+    # Contador usado para armazenar a quantidade de erros de senha.
+    contador = 0
     print('''
     VOCÊ ESTÁ PRESTES A EXCLUIR TODA BASE SE DADOS !!!
     DIGITE ( S I M ) - PARA EXCLUIR TUDO.
@@ -59,14 +59,29 @@ def Selecao_Zero():
     {verde2}PARA APAGAR VOCÊ PRECISA DIGITAR A SEGUINTE SENHA:{defalt} {vermelho2}12345{defalt}
         ''')
         while True:
+            # Entrada temporaria apenas para esse DEF.
             Imput_Temporario = str(input('DIGITE A SENHA PARA CONFIRMAR: '))
+            # Condição onde aceita a senha de 12345 para excluir tudo do banco de dados TXT.
             if Imput_Temporario == '12345':
+                # aqui ele acesará o aquivo TXT e irá sobrescrever tudo em branco, com isso a lista irá limpar totalmente.
                 with open('Dados.txt','w') as arquivo:
                     arquivo.write("")
                 print(f'{verde2}TODA A LISTA FOI APAGADA COM SUCESSO.{defalt}')
+                # Comando usado para finalizar o laço e encerrar o programa.
                 break
+            # Condição usanda para parar o proprama quando erro de senhas ultrapasse os 5 erros.
+            if contador == 4:
+                print(f'{vermelho2}VOCÊ ERROU A COMBINAÇÃO MAIS DE 5 VEZES! POR ISSO O PROGRAMA ENCERRARÁ.{defalt}')
+                # Comando usado para finalizar o laço e encerrar o programa.
+                break
+            # Usado no laço para imprimir a mensagem de senha ínvalida e mais alguns comandos mensionados abaixo.
             else:
                 print(f'{vermelho2}SENHA INVALIDA! TENTE NOVAMENTE.{defalt}')
+                # usada para cada erro de senha, somar +1 a variavel ( contador = 0 ) assim podendo manipular ela depois em alguma condição.
+                contador = contador +1
+                # Essa é a condição para quando o contador estiver perto das 5 tentativas, com isso irá imprimir uma mensagem.
+                if contador == 4:
+                    print(f'{amarelo}VOCÊ ERROU A SENHA 4 VEZES, VOCÊ SÓ TEM MAIS UMA TENTATIVA.{defalt}')                
 
     if Entrada_Usuario_Zero == 'NAO':
         print(f'{vermelho2}COMANDO CANCELADO{defalt}')
