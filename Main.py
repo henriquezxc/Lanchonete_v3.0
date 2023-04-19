@@ -1,5 +1,7 @@
 # Software de lanchonete, onde o cliente escolhe seu lanche e no final mostra todo o resumo da compra.
 
+# importação do Arquivo ( Cores.py ) para ser usado ao longo do programa.
+from Cores import *
 # Usamos o método ( Def ) apenas para impresão do MENU
 def Menu_Inicial():
 
@@ -57,31 +59,31 @@ while True:
         # Agora adicionamos como strig o nome ('Cachorro - Quente') a lista: nomes_lanches = []
         nomes_lanches.append('Cachorro Quente R$: 4.89')
         # Imprimimos uma mensagem para saber qual lanche foi selecionado e adicionado a lista: lanches_escolhidos = []
-        print('Cachorro Quente foi adicionado.')
+        print(f'{verde2}Cachorro Quente foi adicionado.{defalt}')
     # Os demais continua da mesma forma mensionada acima.
         Mensagem_SAIR()
     elif Escolha_do_lanche == '2':
         lanches_escolhidos.append(Valores[1])
         nomes_lanches.append('X-Salada R$: 1.50')
-        print('X-Salada foi adicionado.')
+        print(f'{verde2}X-Salada foi adicionado.{defalt}')
         Mensagem_SAIR()
 
     elif Escolha_do_lanche == '3':
         lanches_escolhidos.append(Valores[2])
         nomes_lanches.append('X-Bacon R$ 2.98')
-        print('X-Bacon foi adicionado.')
+        print(f'{verde2}X-Bacon foi adicionado.{defalt}')
         Mensagem_SAIR()
 
     elif Escolha_do_lanche == '4':
         lanches_escolhidos.append(Valores[3])
         nomes_lanches.append('Torrada Simples R$ 2.49')
-        print('Torrada Simples foi adicionado.')
+        print(f'{verde2}Torrada Simples foi adicionado.{defalt}')
         Mensagem_SAIR()
 
     elif Escolha_do_lanche == '5':
         lanches_escolhidos.append(Valores[4])
         nomes_lanches.append('Refrigerante R$ 2.00')
-        print('Refrigerante foi adicionado.')
+        print(f'{verde2}Refrigerante foi adicionado.{defalt}')
         Mensagem_SAIR()
     # Usamos o (.UPPER ) apos a variavel para trasformar qualquer entrada por Maiuscula.
     # Deste modo digitando de varias formas a string ( SIM ) ela irá aceitar, evitando erros
@@ -89,7 +91,7 @@ while True:
         break
     # Condição para quando o usuário não digitar a opção certa.
     else:
-        print('Entrada Invalida!, Digite um numero correspondente ao pedido.')
+        print(f'{vermelho2}Entrada Invalida!, Digite um numero correspondente ao pedido.{defalt}')
 
 # imprime os nomes dos lanches escolhido que ficou armazenado na lista: nomes_lanches = [] usando metodo Def criado acima
 Calculo_de_vezes()
