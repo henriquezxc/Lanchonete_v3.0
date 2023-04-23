@@ -116,7 +116,7 @@ def Selecao_Tres():
     # Agora imprimimos o resultado dos dados armazenados acima:
     print(f'O Valor Bruto de vendas até o momento e de: {verde2}R$ {round(Soma_de_todos_os_lanches,2)}{defalt}')
     # Usei a função ( round() ) e logo apos a variavel o numero ',2' para 2 casas decimais.
-    
+# Menu com as opção apenas para impresão:
 def menu_de_opcoes():
     print(f'''
     #################################################################
@@ -129,7 +129,7 @@ def menu_de_opcoes():
     3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS
     0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
     {defalt}''')
-
+# Menu usado para a condição de todo modo loja:
 def Menu_de_condicoes(): 
     while True:
     
@@ -151,7 +151,7 @@ def Menu_de_condicoes():
             Selecao_Dois()
             while True:
                 Sair_impressao()
-                Entrada_temp_2 = str(input('Parar ou Continuar: ').upper())
+                Entrada_temp_2 = str(input('ESCOLHA UMA OPÇÃO:  ').upper())
                 if Entrada_temp_2 == '2':
                     sair_Menu()
                 elif Entrada_temp_2 ==  '1':
@@ -164,7 +164,7 @@ def Menu_de_condicoes():
             Selecao_Zero()
             while True:
                 Sair_impressao()
-                Entrada_temp_0 = str(input('Parar ou Continuar: ').upper())
+                Entrada_temp_0 = str(input('ESCOLHA UMA OPÇÃO: ').upper())
                 if Entrada_temp_0 == '2':
                     sair_Menu()
                 elif Entrada_temp_0 ==  '1':
@@ -176,7 +176,7 @@ def Menu_de_condicoes():
             Selecao_Tres()
             while True:
                 Sair_impressao()
-                Entrada_temp_0 = str(input('Parar ou Continuar: ').upper())
+                Entrada_temp_0 = str(input('ESCOLHA UMA OPÇÃO:  ').upper())
                 if Entrada_temp_0 == '2':
                     sair_Menu()
                 elif Entrada_temp_0 ==  '1':
