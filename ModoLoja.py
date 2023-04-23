@@ -63,6 +63,60 @@ def Selecao_Zero():
         print(f'{vermelho2}COMANDO CANCELADO{defalt}')
 # Ao usuario digitar a string '0' irá acionar o def Selecao_Zero(): criado acima.
 
+def Selecao_Tres():
+
+    import math
+    # Dicionario onde irá armazenar os dado do aquivo dos ('dados.txt) temporariamente:
+    Dicionario = {}
+
+    # Onde pegamos os dados do arquivo externo ( 'dados.txt ) para adicionar no Dicionario acima:
+    with open('dados.txt', 'r') as arquivo:
+        i = arquivo.readlines()
+        Dicionario = i
+
+    # Tive que adicionar as variaveis com valores ZERO pois assim quando estiver apenas 1 lanche para ser somado, não vai dar erros.
+    Calculo_cachorro = 0
+    Calculo_X_Salada = 0
+    Calculo_X_Bacon = 0
+    Calculo_Torrada_Simples = 0
+    Calculo_Refrigerante = 0
+
+    # Condiçoes para quando for encontrado o o item mensionados fazer os calulos dos lanches.
+    # Aqui usamos a condição para caso estiver (Cachorro Quente R$: 4.89) na lista ele entra e faz os comandos necessarios:
+    if Dicionario.count('Cachorro Quente R$: 4.89\n'):
+        # Abaixo pegamos o valor item acima e multiplicamos por quantas vezes ele tem na lista usando o (.Count) + o valor pré definido acima:
+        Calculo_cachorro = 4.89 * (Dicionario.count('Cachorro Quente R$: 4.89\n'))
+
+    if Dicionario.count('X-Salada R$: 1.50\n'):
+        # Abaixo pegamos o valor item acima e multiplicamos por quantas vezes ele tem na lista usando o (.Count) + o valor pré definido acima:
+        Calculo_X_Salada = 1.50 * (Dicionario.count('X-Salada R$: 1.50\n'))
+
+    if Dicionario.count('X-Bacon R$ 2.98\n'):
+        # Abaixo pegamos o valor item acima e multiplicamos por quantas vezes ele tem na lista usando o (.Count) + o valor pré definido acima:
+        Calculo_X_Bacon = 2.98 * Dicionario.count('X-Bacon R$ 2.98\n')
+
+    if Dicionario.count('Torrada Simples R$ 2.49\n'):
+        # Abaixo pegamos o valor item acima e multiplicamos por quantas vezes ele tem na lista usando o (.Count) + o valor pré definido acima:
+        Calculo_Torrada_Simples = 2.49 * Dicionario.count('Torrada Simples R$ 2.49\n')
+
+    if Dicionario.count('Refrigerante R$ 2.00\n'):
+        # Abaixo pegamos o valor item acima e multiplicamos por quantas vezes ele tem na lista usando o (.Count) + o valor pré definido acima:
+        Calculo_Refrigerante = 2.00 * Dicionario.count('Refrigerante R$ 2.00\n')
+    else:
+        print(f'{vermelho2}Sua Lista de vendas está vazia, pois você apagou tudo do banco de dados antes.{defalt}')
+
+    # Toda soma das condições acima são armazenadas nessa variavel:
+    Soma_de_todos_os_lanches = (
+       Calculo_cachorro
+    + Calculo_X_Salada
+    + Calculo_X_Bacon
+    + Calculo_Torrada_Simples
+    + Calculo_Refrigerante
+    )
+    # Agora imprimimos o resultado dos dados armazenados acima:
+    print(f'O Valor Bruto de vendas até o momento e de: {verde2}R$ {round(Soma_de_todos_os_lanches,2)}{defalt}')
+    # Usei a função ( round() ) e logo apos a variavel o numero ',2' para 2 casas decimais.
+    
 def menu_de_opcoes():
     print(f'''
     #################################################################
@@ -72,7 +126,7 @@ def menu_de_opcoes():
     print(f'''{verde2}
     1 - LISTAR TODOS OS PRODUTOS VENDIDOS NA ORDEM DE COMPRA 
     2 - MOSTRAR QUANTIDADE DE CADA PRODUTO VENDIDO
-    3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS #Em Desenvolvimento...
+    3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS
     0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
     {defalt}''')
 
@@ -83,10 +137,11 @@ def Menu_de_condicoes():
         if Entrada_Usuario == '1':
             Selecao_Um()
             while True:
-                Entrada_temp_1 = str(input('Parar ou continuar: ').upper())
-                if Entrada_temp_1 == 'PARAR':
+                Sair_impressao()
+                Entrada_temp_1 = str(input('ESCOLHA UMA OPÇÃO:  ').upper())
+                if Entrada_temp_1 == '2':
                     sair_Menu()
-                elif Entrada_temp_1 ==  'CONTINUAR':
+                elif Entrada_temp_1 ==  '1':
                     menu_de_opcoes()
                     break
                 else:
@@ -95,10 +150,11 @@ def Menu_de_condicoes():
         elif  Entrada_Usuario == '2':
             Selecao_Dois()
             while True:
+                Sair_impressao()
                 Entrada_temp_2 = str(input('Parar ou Continuar: ').upper())
-                if Entrada_temp_2 == 'PARAR':
+                if Entrada_temp_2 == '2':
                     sair_Menu()
-                elif Entrada_temp_2 ==  'CONTINUAR':
+                elif Entrada_temp_2 ==  '1':
                     menu_de_opcoes()
                     break
                 else:
@@ -107,18 +163,41 @@ def Menu_de_condicoes():
         elif Entrada_Usuario == '0':
             Selecao_Zero()
             while True:
-                Entrada_temp_3 = str(input('Parar ou Continuar: ').upper())
-                if Entrada_temp_3 == 'PARAR':
+                Sair_impressao()
+                Entrada_temp_0 = str(input('Parar ou Continuar: ').upper())
+                if Entrada_temp_0 == '2':
                     sair_Menu()
-                elif Entrada_temp_3 ==  'CONTINUAR':
+                elif Entrada_temp_0 ==  '1':
                     menu_de_opcoes()
                     break
                 else:
                     print(f'{vermelho2}Entrada Invalida!{defalt}')
+        elif Entrada_Usuario == '3':
+            Selecao_Tres()
+            while True:
+                Sair_impressao()
+                Entrada_temp_0 = str(input('Parar ou Continuar: ').upper())
+                if Entrada_temp_0 == '2':
+                    sair_Menu()
+                elif Entrada_temp_0 ==  '1':
+                    menu_de_opcoes()
+                    break
+                else:
+                    print(f'{vermelho2}Entrada Invalida!{defalt}')
+        else:
+            print(f'{vermelho2}Entrada Invalida, Escolha a opção certa.{defalt}')
 
+# Usamos essa função apenas para fechar o programa:
 def sair_Menu():
     print(f'{vermelho2}SEU PROGRAMA FOI ENCERRADO.{defalt}')
     exit()
+
+def Sair_impressao():
+    print(f'''
+{azul_bebe}DESEJA CONTINUAR OU SAIR? , SELECIONE UMA OPÇÃO ABAIXO:{defalt}
+DIGITE 1 - PARA {verde2}VOLTAR{defalt} AO MODO LOJA
+DIGITE 2 - PARA {vermelho2}ENCERRAR{defalt} O PROGRAMA
+    ''')
 
 menu_de_opcoes()
 Menu_de_condicoes()

@@ -44,9 +44,9 @@ def Calculo_de_vezes():
 # Aqui acionamos o metodo acima:  Menu_Inicial():
 Menu_Inicial()
 # Onde ficará os lanches escolhidos pelo usuario.
-lanches_escolhidos = []
+lanches_escolhidos = [ ]
 # Onde irá ficar armazenados os nomes dos lanches.
-nomes_lanches = []
+nomes_lanches = [ ]
 # Valores de cada lanche na lista já definidos.
 Valores = [ 4.89 , 1.50, 2.98, 2.49, 2.00 ]
 # Laço onde começa todas as operações.
