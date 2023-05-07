@@ -3,7 +3,7 @@ from Cores import *
 
 # Ao selecionar a opção 1 o codigo a seguir e executado.
 def Selecao_Um():
-    with open('Dados.txt') as arquivo:
+    with open('dados.txt') as arquivo:
         i = arquivo.read()
         print(i)
 # Ao usuario digitar a string '1' irá acionar o def Selecao_Um(): criado acima.
@@ -39,7 +39,7 @@ def Selecao_Zero():
             # Condição onde aceita a senha de 12345 para excluir tudo do banco de dados TXT.
             if Imput_Temporario == '12345':
                 # aqui ele acesará o aquivo TXT e irá sobrescrever tudo em branco, com isso a lista irá limpar totalmente.
-                with open('Dados.txt','w') as arquivo:
+                with open('dados.txt','w') as arquivo:
                     arquivo.write("")
                 print(f'{verde2}TODA A LISTA FOI APAGADA COM SUCESSO.{defalt}')
                 # Comando usado para finalizar o laço e encerrar o programa.

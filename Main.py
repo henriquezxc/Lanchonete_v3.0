@@ -102,7 +102,7 @@ print('\n''O Total do seu lanche foi de R$: ''%.2f'%soma,'\n')
 print('***************************************')
 
 # Acrescenta os nomes da lista: nomes_lanches = [] ao arquivo 'Dados.txt' Externo.
-with open('Dados.txt','a') as arquivo:
+with open('dados.txt','a') as arquivo:
     for valor in nomes_lanches:
         arquivo.write(str(valor)+'\n')
 
