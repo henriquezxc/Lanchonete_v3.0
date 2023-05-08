@@ -132,4 +132,3 @@ def Menu_main2():
         print('ENTRADA INVALIDA!')
 
 Menu_main2()
-#_________________________  Testes em beta abaixo ___________________________

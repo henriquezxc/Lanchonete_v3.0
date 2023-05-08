@@ -65,7 +65,6 @@ def Selecao_Zero():
 
 def Selecao_Tres():
 
-    import math
     # Dicionario onde irá armazenar os dado do aquivo dos ('dados.txt) temporariamente:
     Dicionario = {}
 
@@ -103,7 +102,9 @@ def Selecao_Tres():
         # Abaixo pegamos o valor item acima e multiplicamos por quantas vezes ele tem na lista usando o (.Count) + o valor pré definido acima:
         Calculo_Refrigerante = 2.00 * Dicionario.count('Refrigerante R$ 2.00\n')
     else:
-        print(f'{vermelho2}Sua Lista de vendas está vazia, pois você apagou tudo do banco de dados antes.{defalt}')
+        if len(Dicionario) == 0:
+            print(f'{vermelho2}Sua lista está totalmente vazia, pois foi excluida recentemente.{defalt}')
+        
 
     # Toda soma das condições acima são armazenadas nessa variavel:
     Soma_de_todos_os_lanches = (
