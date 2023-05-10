@@ -1,26 +1,37 @@
 # Aqui esta todo o algoritmo do modo loja, onde fica armazenado todos os dados de compra
 from Cores import *
-
+import os
+from Main import app
 # Ao selecionar a opção 1 o codigo a seguir e executado.
 def Selecao_Um():
+    os.system('clear')
     with open('dados.txt') as arquivo:
+        # x = arquivo.read()
         i = arquivo.read()
-        print(i)
+        if len(i) >= 1:
+            print('A lanchonete vendeu:')
+            print(i)
+        else:
+            print(f'{vermelho2}Sua lista está totalmente vazia, pois foi excluida recentemente.{defalt}')
 # Ao usuario digitar a string '1' irá acionar o def Selecao_Um(): criado acima.
 
 # Ao selecionar a opção 2 o codigo a seguir e executado.
 def Selecao_Dois():
+    os.system('clear')
     # Importa avariavel 'Lista_Temp' do arquivo 'ConversorTXT.py'
     from ConversorTXT import Lista_Temp
-    print (Lista_Temp.count ('Cachorro Quente R$: 4.89\n'),'- Cachorro Quente')
-    print (Lista_Temp.count ('X-Salada R$: 1.50\n'),'- X-Salada')
-    print (Lista_Temp.count ('X-Bacon R$ 2.98\n'),'- X-Bacon')
-    print (Lista_Temp.count ('Torrada Simples R$ 2.49\n'),'- Torrada Simples')
-    print (Lista_Temp.count ('Refrigerante R$ 2.00\n'),'- Refrigentes')
-# Ao usuario digitar a string '2' irá acionar o def Selecao_Dois(): criado acima.
-
+    if len(Lista_Temp) >= 1:
+        print (Lista_Temp.count ('Cachorro Quente R$: 4.89\n'),'- Cachorro Quente')
+        print (Lista_Temp.count ('X-Salada R$: 1.50\n'),'- X-Salada')
+        print (Lista_Temp.count ('X-Bacon R$ 2.98\n'),'- X-Bacon')
+        print (Lista_Temp.count ('Torrada Simples R$ 2.49\n'),'- Torrada Simples')
+        print (Lista_Temp.count ('Refrigerante R$ 2.00\n'),'- Refrigentes')
+    # Ao usuario digitar a string '2' irá acionar o def Selecao_Dois(): criado acima.
+    else:
+        print(f'{vermelho2}Sua lista está totalmente vazia, pois foi excluida recentemente.{defalt}')
 # Ao selecionar a opção 0 o codigo a seguir e executado.
 def Selecao_Zero():
+    os.system('clear')
     # Contador usado para armazenar a quantidade de erros de senha.
     contador = 0
     print('''
@@ -64,7 +75,7 @@ def Selecao_Zero():
 # Ao usuario digitar a string '0' irá acionar o def Selecao_Zero(): criado acima.
 
 def Selecao_Tres():
-
+    os.system('clear')
     # Dicionario onde irá armazenar os dado do aquivo dos ('dados.txt) temporariamente:
     Dicionario = {}
 
@@ -119,6 +130,7 @@ def Selecao_Tres():
     # Usei a função ( round() ) e logo apos a variavel o numero ',2' para 2 casas decimais.
 # Menu com as opção apenas para impresão:
 def menu_de_opcoes():
+    os.system('clear')
     print(f'''
     #################################################################
     {amarelo}VOCÊ ESTÁ NO MODO LOJA, AQUI ESTARÁ TODOS OS DADOS DE SUA EMPRESA{defalt} 
@@ -129,6 +141,7 @@ def menu_de_opcoes():
     2 - MOSTRAR QUANTIDADE DE CADA PRODUTO VENDIDO
     3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS
     0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
+    x - PARA RETORNAR AO MODO CLIENTE ( Em desenvolvimento... )
     {defalt}''')
 # Menu usado para a condição de todo modo loja:
 def Menu_de_condicoes(): 
