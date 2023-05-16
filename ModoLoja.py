@@ -1,7 +1,7 @@
 # Aqui esta todo o algoritmo do modo loja, onde fica armazenado todos os dados de compra
 from Cores import *
 import os
-from Main import app
+
 # Ao selecionar a opção 1 o codigo a seguir e executado.
 def Selecao_Um():
     os.system('clear')
@@ -18,8 +18,12 @@ def Selecao_Um():
 # Ao selecionar a opção 2 o codigo a seguir e executado.
 def Selecao_Dois():
     os.system('clear')
-    # Importa avariavel 'Lista_Temp' do arquivo 'ConversorTXT.py'
-    from ConversorTXT import Lista_Temp
+    Lista_Temp = []
+
+    with open('dados.txt', 'r') as arquivo:
+        i = arquivo.readlines()
+        for linha in i:
+            Lista_Temp.append(linha)
     if len(Lista_Temp) >= 1:
         print (Lista_Temp.count ('Cachorro Quente R$: 4.89\n'),'- Cachorro Quente')
         print (Lista_Temp.count ('X-Salada R$: 1.50\n'),'- X-Salada')
@@ -74,10 +78,11 @@ def Selecao_Zero():
         print(f'{vermelho2}COMANDO CANCELADO{defalt}')
 # Ao usuario digitar a string '0' irá acionar o def Selecao_Zero(): criado acima.
 
+    
 def Selecao_Tres():
     os.system('clear')
     # Dicionario onde irá armazenar os dado do aquivo dos ('dados.txt) temporariamente:
-    Dicionario = {}
+    Dicionario = { }
 
     # Onde pegamos os dados do arquivo externo ( 'dados.txt ) para adicionar no Dicionario acima:
     with open('dados.txt', 'r') as arquivo:
@@ -141,7 +146,6 @@ def menu_de_opcoes():
     2 - MOSTRAR QUANTIDADE DE CADA PRODUTO VENDIDO
     3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS
     0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
-    x - PARA RETORNAR AO MODO CLIENTE ( Em desenvolvimento... )
     {defalt}''')
 # Menu usado para a condição de todo modo loja:
 def Menu_de_condicoes(): 
@@ -190,16 +194,15 @@ def Menu_de_condicoes():
             Selecao_Tres()
             while True:
                 Sair_impressao()
-                Entrada_temp_0 = str(input('ESCOLHA UMA OPÇÃO:  ').upper())
-                if Entrada_temp_0 == '2':
+                Entrada_temp_3 = str(input('ESCOLHA UMA OPÇÃO:  ').upper())
+                if Entrada_temp_3 == '2':
                     sair_Menu()
-                elif Entrada_temp_0 ==  '1':
+                elif Entrada_temp_3 ==  '1':
                     menu_de_opcoes()
                     break
                 else:
                     print(f'{vermelho2}Entrada Invalida!{defalt}')
-        else:
-            print(f'{vermelho2}Entrada Invalida, Escolha a opção certa.{defalt}')
+        
 
 # Usamos essa função apenas para fechar o programa:
 def sair_Menu():

@@ -120,13 +120,12 @@ def Menu_main2():
 
     Entrada_Final = str(input('DIGITE A OPÇÃO DESEJADA: '))
     if Entrada_Final == '1':
-        while True:
-            app()
+        app()
 
     elif Entrada_Final == '2':
         import ModoLoja
+        exit()
 
-         
     elif Entrada_Final == '3':
         print('Fechando Tudo ...')
         exit()
