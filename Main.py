@@ -5,6 +5,7 @@ os.system('clear')
 from Cores import *
 
 def app():
+    os.system('clear')
     # Usamos o método ( Def ) apenas para impresão do MENU
     def Menu_Inicial():
 
