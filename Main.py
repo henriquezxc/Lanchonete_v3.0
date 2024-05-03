@@ -24,7 +24,7 @@ def app():
         print('____________________________________')
 
     # esse metodo pega os nomes que foi acrecentado a lista: nomes_lanches = [] e com .CONT conta quantas vezes foi acrescentado.
-    # Assim usando IF também para condições.
+    # Assim usando IF também para condições
     def Calculo_de_vezes():
         if nomes_lanches.count('Cachorro Quente R$: 4.89'):
             print('****************************')
@@ -100,7 +100,7 @@ def app():
     print('***************************************')
     print('\n''O Total do seu lanche foi de R$: ''%.2f'%soma,'\n')
     print('***************************************')
-    
+
     # Acrescenta os nomes da lista: nomes_lanches = [] ao arquivo 'Dados.txt' Externo.
     with open('dados.txt','a') as arquivo:
         for valor in nomes_lanches:

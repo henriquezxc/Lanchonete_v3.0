@@ -19,7 +19,6 @@ def Selecao_Um():
 def Selecao_Dois():
     os.system('clear')
     Lista_Temp = []
-
     with open('dados.txt', 'r') as arquivo:
         i = arquivo.readlines()
         for linha in i:
@@ -30,6 +29,8 @@ def Selecao_Dois():
         print (Lista_Temp.count ('X-Bacon R$ 2.98\n'),'- X-Bacon')
         print (Lista_Temp.count ('Torrada Simples R$ 2.49\n'),'- Torrada Simples')
         print (Lista_Temp.count ('Refrigerante R$ 2.00\n'),'- Refrigentes')
+        # Beta logo abaixo...
+        print(f"\nTotal de lanches foi De: {verde2}{len(Lista_Temp)} Lanches{verde2}") 
     # Ao usuario digitar a string '2' irá acionar o def Selecao_Dois(): criado acima.
     else:
         print(f'{vermelho2}Sua lista está totalmente vazia, pois foi excluida recentemente.{defalt}')
@@ -130,8 +131,11 @@ def Selecao_Tres():
     + Calculo_Torrada_Simples
     + Calculo_Refrigerante
     )
-    # Agora imprimimos o resultado dos dados armazenados acima:
-    print(f'O Valor Bruto de vendas até o momento e de: {verde2}R$ {round(Soma_de_todos_os_lanches,2)}{defalt}')
+    # Agora imprimimos o resultado dos dados armazenados acima se a quantidade de produtos for maior que Zero: 
+    if Soma_de_todos_os_lanches > 0:
+        print(f'O Valor Bruto de vendas até o momento e de: {verde2}R$ {round(Soma_de_todos_os_lanches,2)}{defalt}')
+    
+    
     # Usei a função ( round() ) e logo apos a variavel o numero ',2' para 2 casas decimais.
 # Menu com as opção apenas para impresão:
 def menu_de_opcoes():
