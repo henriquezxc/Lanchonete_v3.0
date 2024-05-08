@@ -213,7 +213,7 @@ def Menu_de_condicoes():
             voltar()
             menu_de_opcoes()
         
-        if Entrada_Usuario != "":
+        if Entrada_Usuario != "1" and Entrada_Usuario != "2" and Entrada_Usuario != '31 ':
             print(f'{vermelho2}Opçao invalida!{defalt}')
 
 # Usamos essa função apenas para fechar o programa:
