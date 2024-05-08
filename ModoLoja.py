@@ -78,7 +78,6 @@ def Selecao_Zero():
     if Entrada_Usuario_Zero == 'NAO':
         print(f'{vermelho2}COMANDO CANCELADO{defalt}')
 # Ao usuario digitar a string '0' irá acionar o def Selecao_Zero(): criado acima.
-
     
 def Selecao_Tres():
     os.system('clear')
@@ -149,6 +148,7 @@ def menu_de_opcoes():
     1 - LISTAR TODOS OS PRODUTOS VENDIDOS NA ORDEM DE COMPRA 
     2 - MOSTRAR QUANTIDADE DE CADA PRODUTO VENDIDO
     3 - VALOR BRUTO DE TODOS OS PRODUTOS VENDIDOS
+    4 - VOLTAR PARA MODO COMPRA
     0 - LIMPAR TODA A LISTA DE PRODUTOS POR COMPLETO
     {defalt}''')
 # Menu usado para a condição de todo modo loja:
@@ -206,7 +206,15 @@ def Menu_de_condicoes():
                     break
                 else:
                     print(f'{vermelho2}Entrada Invalida!{defalt}')
+        if Entrada_Usuario == "4":
+            def voltar():
+                from Main import app
+                app()
+            voltar()
+            menu_de_opcoes()
         
+        if Entrada_Usuario != "":
+            print(f'{vermelho2}Opçao invalida!{defalt}')
 
 # Usamos essa função apenas para fechar o programa:
 def sair_Menu():

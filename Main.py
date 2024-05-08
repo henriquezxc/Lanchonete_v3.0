@@ -124,8 +124,11 @@ def Menu_main2():
         app()
 
     elif Entrada_Final == '2':
-        import ModoLoja
-        exit()
+        def ModoLoja():
+            import ModoLoja
+            ModoLoja
+        ModoLoja()
+
 
     elif Entrada_Final == '3':
         print('Fechando Tudo ...')
