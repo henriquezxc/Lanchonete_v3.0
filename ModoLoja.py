@@ -212,14 +212,16 @@ def Menu_de_condicoes():
                 app()
             voltar()
             menu_de_opcoes()
-        
-        if Entrada_Usuario != "1" and Entrada_Usuario != "2" and Entrada_Usuario != '31 ':
-            print(f'{vermelho2}Opçao invalida!{defalt}')
+        # Para solucionar um erro, quando navega entre as opcoes acima, dava um print de erro, essa foi a soluçao.
+        if Entrada_Usuario != "1" and Entrada_Usuario != "2" and Entrada_Usuario != '3':
+            print(f'{vermelho2}Opçao Invalida!{defalt}')
+
 
 # Usamos essa função apenas para fechar o programa:
 def sair_Menu():
     print(f'{vermelho2}SEU PROGRAMA FOI ENCERRADO.{defalt}')
     exit()
+
 
 def Sair_impressao():
     print(f'''
