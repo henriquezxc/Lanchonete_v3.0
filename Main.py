@@ -115,6 +115,8 @@ def app():
     print('\n''O Total do seu lanche foi de R$: ''%.2f'%soma,'\n')
     #Função abaixo e designada a horarios, usando o arquivo ( DatasHoras.py ) 
     HorariosNota()
+    # Funçao abaixo designada a Datas, Usando o aquivo ( DatasHoras.py )
+    DataNota()
     print('***************************************')
     
 
@@ -138,7 +140,7 @@ def Menu_main2():
 
     Entrada_Final = str(input('      DIGITE A OPÇÃO DESEJADA: '))
     if Entrada_Final == '1':
-        app()
+        app() 
 
     elif Entrada_Final == '2':
         def ModoLoja():
